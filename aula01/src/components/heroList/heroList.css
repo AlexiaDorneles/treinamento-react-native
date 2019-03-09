@@ -1,0 +1,6 @@
+.heroes__title {
+	align-self: flex-start;
+	font-weight: bold;
+	font-size: 26px;
+	color: #333333;
+}

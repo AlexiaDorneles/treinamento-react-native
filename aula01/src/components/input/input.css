@@ -1,0 +1,20 @@
+.input {
+	background: #ffffff;
+	border: 1px solid #d1d1d1;
+	box-sizing: border-box;
+	border-radius: 6px;
+	height: 45px;
+}
+
+.input__label {
+	font-weight: 300;
+	font-size: 14px;
+	color: #666666;
+	display: block;
+	margin-bottom: 5px;
+	margin-top: 25px;
+}
+
+.input__label:first-child {
+	margin-top: 0;
+}

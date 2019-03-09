@@ -1,0 +1,6 @@
+.addHeroForm {
+    padding-top: 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}

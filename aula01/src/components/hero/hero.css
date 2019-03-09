@@ -1,0 +1,36 @@
+.hero__card {
+	height: 225px;
+	width: 100%;
+	background: white;
+	border-radius: 6px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+}
+
+.hero__card--shadow {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.3%, rgba(0, 0, 0, 0.79) 92.82%);
+}
+
+.hero__image {
+	max-width: 100%;
+    object-fit: cover;
+    background: white;
+}
+
+.hero__card:first-of-type {
+	margin-top: 0px;
+}
+
+.hero__name {
+	font-weight: bold;
+	font-size: 26px;
+	color: #ffffff;
+	position: absolute;
+	bottom: 10px;
+}
