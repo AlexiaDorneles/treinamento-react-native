@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Image, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
+import { IgIcon } from '../igIcon/ig-icon.component'
 
 const styles = StyleSheet.create({
   container: {
@@ -9,20 +10,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 10,
   },
-  icons: {
+  corners: {
     width: 20,
     height: 20,
   },
-  centerIcon: {
+  center: {
     width: 100,
     maxHeight: 30,
   },
 })
 
+const _getStyle = (position) => position === 1 ? styles.center : styles.corners
+
+const _resolveHeader = (item, position) => {
+  if (item.name) return <IgIcon name={item.name} style={_getStyle(position)} />
+  return <Text style={_getStyle(position)}>{item}</Text>
+}
+
 export const Header = ({ left, center, right }) => (
   <View style={styles.container}>
-    <Image source={left} style={styles.icons} />
-    <Image source={center} style={styles.centerIcon} />
-    <Image source={right} style={styles.icons} />
+    {_resolveHeader(left, 0)}
+    {_resolveHeader(center, 1)}
+    {_resolveHeader(right, 2)}
   </View>
 )

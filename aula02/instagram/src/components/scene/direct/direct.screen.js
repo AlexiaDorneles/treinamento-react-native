@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, ScrollView } from 'react-native'
-import { DirectItem } from './directItem/directItem'
+import { DirectItem } from './direct-item/direct-item.section'
 import { Header, Footer } from '../../generic'
 
 import backArrow from '../../../img/back-arrow.png'

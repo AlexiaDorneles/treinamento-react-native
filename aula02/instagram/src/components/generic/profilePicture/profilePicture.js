@@ -2,8 +2,6 @@ import React from 'react'
 import { Image, View, StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
-  container: {
-  },
   img: {
     width: 65,
     height: 65,
@@ -39,9 +37,9 @@ const renderOnline = () => (
   </View>
 )
 
-export const ProfilePicture = ({ picture, isOnline, style }) => (
+export const ProfilePicture = ({ picture, isOnline, style, imageStyle }) => (
   <View style={{ ...styles.container, ...style }}>
-    <Image style={styles.img} source={{ uri: picture }} />
+    <Image style={{ ...styles.img, ...imageStyle }} source={{ uri: picture }} />
     {isOnline ? renderOnline() : null}
   </View>
 )

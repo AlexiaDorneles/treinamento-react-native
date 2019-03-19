@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native'
 
 import api from './api/feed.json'
@@ -9,7 +9,7 @@ import instagramLogo from './img/instagram_logo.png'
 import send from './img/send.png'
 import camera from './img/camera.png'
 
-import { Direct } from './components/scene'
+import { Direct, Chat } from './components/scene'
 
 const width = Dimensions.get('window').width
 
@@ -72,7 +72,8 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Direct />
+        {/* <Direct /> */}
+        <Chat />
       </View>
       //   {this.renderHeader()}
       //   <ScrollView style={styles.container} >
@@ -90,5 +91,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
+    fontFamily: 'Lato-Bold',
   },
 })

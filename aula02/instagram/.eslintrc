@@ -33,6 +33,7 @@
       "always"
     ],
     "no-extra-boolean-cast": 0,
+    "no-unescaped-entities": 0,
     "prefer-const": [
       "error",
       {
