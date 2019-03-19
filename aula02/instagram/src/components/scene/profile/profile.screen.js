@@ -28,9 +28,9 @@ export class Profile extends Component {
       <Fragment>
         <Header left="Cancel" center="Edit Profile" right="Done" />
         <View style={styles.imageContainer}>
-          <ProfilePicture picture={profile.picture} />
-          <TouchableOpacity style={styles.blueText}>
-            <Text>Change Profile Photo</Text>
+          <ProfilePicture picture={profile.info.picture} imageStyle={styles.pictureStyle} />
+          <TouchableOpacity >
+            <Text style={styles.blueText}>Change Profile Photo</Text>
           </TouchableOpacity>
         </View>
 

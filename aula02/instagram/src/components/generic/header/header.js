@@ -4,19 +4,22 @@ import { IgIcon } from '../igIcon/ig-icon.component'
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 20,
+    padding: 10,
     alignItems: 'center',
-    marginVertical: 10,
+    borderBottomColor: '#D8D8D8',
+    borderBottomWidth: 1,
   },
   corners: {
-    width: 20,
-    height: 20,
+    fontSize: 14,
   },
   center: {
     width: 100,
     maxHeight: 30,
+    fontWeight: 'bold',
+    fontSize: 18,
   },
 })
 

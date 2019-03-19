@@ -1,13 +1,13 @@
 {
   "info": {
-    "name": "",
-    "picture": "",
-    "website": "",
-    "bio": ""
+    "name": "Wanda Maximoff",
+    "picture": "https://http2.mlstatic.com/feiticeira-escarlate-wanda-maximoff--D_NQ_NP_870701-MLB20392363025_082015-F.jpg",
+    "website": "www.marvel.com",
+    "bio": "house of M"
   },
   "privateInfo": {
-    "email": "",
-    "phone": "",
-    "gender": ""
+    "email": "wmaximoff@gmail.com",
+    "phone": "55 51 98765 4321",
+    "gender": "Female"
   }
 }

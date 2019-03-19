@@ -9,7 +9,7 @@ import instagramLogo from './img/instagram_logo.png'
 import send from './img/send.png'
 import camera from './img/camera.png'
 
-import { Direct, Chat, Login } from './components/scene'
+import { Direct, Chat, Login, Profile } from './components/scene'
 
 const width = Dimensions.get('window').width
 
@@ -74,7 +74,8 @@ class App extends Component {
       <View style={styles.container}>
         {/* <Direct /> */}
         {/* <Chat /> */}
-        <Login />
+        {/* <Login /> */}
+        <Profile />
       </View>
       //   {this.renderHeader()}
       //   <ScrollView style={styles.container} >
