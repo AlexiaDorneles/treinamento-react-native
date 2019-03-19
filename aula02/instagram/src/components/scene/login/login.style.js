@@ -12,7 +12,6 @@ export default StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     paddingBottom: 5,
-    flex: 1,
   },
   logo: {
     ...text,

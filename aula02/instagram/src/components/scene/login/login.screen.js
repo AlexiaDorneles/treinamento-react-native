@@ -4,6 +4,7 @@ import { Text, View, KeyboardAvoidingView } from 'react-native'
 
 import styles from './login.style'
 import { IgInput, IgButton, IgLine, IgIcon, IgLogo } from '../../generic'
+import { ScrollView } from 'react-native-gesture-handler';
 
 const LINEAR_START = { x: 1, y: 0 }
 const LINEAR_END = { x: 0, y: 1 }
@@ -22,36 +23,39 @@ export class Login extends Component {
           start={LINEAR_START}
           end={LINEAR_END}
           colors={LINEAR_COLORS}
-          style={styles.container}
+          style={{ flex: 1 }}
         >
-          <IgLogo isWhite={true} style={styles.logo} />
-          {this.renderText('Sign in and use more features')}
+          <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.container}>
 
-          <IgInput style={styles.input} placeholder="Email or username" />
-          <IgInput style={styles.input} placeholder="Password" />
+            <IgLogo isWhite={true} style={styles.logo} />
+            {this.renderText('Sign in and use more features')}
 
-          <IgButton label="Sign in" />
+            <IgInput style={styles.input} placeholder="Email or username" />
+            <IgInput style={styles.input} placeholder="Password" />
 
-          <View style={styles.row}>
-            {this.renderText('Forgot your login details?', styles.small)}
-            {this.renderText('Get help signing in.', styles.small, styles.underlined)}
-          </View>
+            <IgButton label="Sign in" />
 
-          <View style={styles.lineContainer}>
-            <IgLine color="white" width="40%" />
-            {this.renderText('OR', styles.or)}
-            <IgLine color="white" width="40%" />
-          </View>
+            <View style={styles.row}>
+              {this.renderText('Forgot your login details?', styles.small)}
+              {this.renderText('Get help signing in.', styles.small, styles.underlined)}
+            </View>
 
-          <View style={styles.row}>
-            <IgIcon name="facebook_lg" style={styles.facebook} />
-            <Text style={styles.facebook}>Continue with facebook</Text>
-          </View>
+            <View style={styles.lineContainer}>
+              <IgLine color="white" width="40%" />
+              {this.renderText('OR', styles.or)}
+              <IgLine color="white" width="40%" />
+            </View>
 
-          <View style={styles.noAccount}>
-            {this.renderText('Don\'t have an account?', styles.small)}
-            {this.renderText('Sign in', styles.small, styles.underlined)}
-          </View>
+            <View style={styles.row}>
+              <IgIcon name="facebook_lg" style={styles.facebook} />
+              <Text style={styles.facebook}>Continue with facebook</Text>
+            </View>
+
+            <View style={styles.noAccount}>
+              {this.renderText('Don\'t have an account?', styles.small)}
+              {this.renderText('Sign in', styles.small, styles.underlined)}
+            </View>
+          </ScrollView>
         </LinearGradient>
       </KeyboardAvoidingView>
     )
