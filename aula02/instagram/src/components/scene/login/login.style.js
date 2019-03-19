@@ -53,6 +53,7 @@ export default StyleSheet.create({
   },
   noAccount: {
     ...row,
-    marginTop: 'auto',
+    flex: 1,
+    marginTop: 90,
   },
 })
