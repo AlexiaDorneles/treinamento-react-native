@@ -11,15 +11,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomColor: '#D8D8D8',
     borderBottomWidth: 1,
+    backgroundColor: '#FAFAFA',
   },
   corners: {
     fontSize: 14,
+    color: '#262626',
   },
   center: {
     width: 100,
     maxHeight: 30,
     fontWeight: 'bold',
     fontSize: 18,
+    color: '#262626',
   },
 })
 
