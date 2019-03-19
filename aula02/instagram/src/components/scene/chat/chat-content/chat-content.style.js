@@ -8,7 +8,6 @@ export default StyleSheet.create({
   contentContainer: {
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
-    height: 600,
-    backgroundColor: 'purple',
+    height: 650,
   },
 })

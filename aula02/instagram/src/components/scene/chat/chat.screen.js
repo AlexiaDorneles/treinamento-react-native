@@ -17,7 +17,7 @@ export class Chat extends Component {
     return (
       <Fragment>
         <ChatHeader picture="https://avatars2.githubusercontent.com/u/19597184?s=400&v=4" name="alexiadorneles" />
-        <KeyboardAvoidingView contentContainerStyle={{ flex: 1, padding: 10 }} style={{ flex: 1, padding: 10 }}>
+        <KeyboardAvoidingView contentContainerStyle={{ flex: 1, padding: 10 }} style={{ flex: 1, padding: 10 }} keyboardVerticalOffset={100}>
           <ChatContent messages={this.state.messages} />
           <ChatInput onSend={this.onSendMessage} />
         </KeyboardAvoidingView>
