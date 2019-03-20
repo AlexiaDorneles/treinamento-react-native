@@ -1,13 +1,13 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { ProfilePicture, IgIcon } from '../../../generic'
+import { IgProfilePicture, IgIcon } from '../../../generic'
 
 import styles from './chat-header.style'
 
 export const ChatHeader = ({ picture, name }) => (
   <View style={styles.container}>
     <IgIcon name="left-arrow" style={styles.icon} />
-    <ProfilePicture picture={picture} style={styles.imageContainer} imageStyle={styles.image} />
+    <IgProfilePicture picture={picture} style={styles.imageContainer} imageStyle={styles.image} />
     <Text style={styles.name}> {name}</Text>
     <View style={styles.iconsContainer}>
       <IgIcon name="home" style={styles.icon} />

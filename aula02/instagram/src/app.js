@@ -75,7 +75,7 @@ class App extends Component {
         {/* <Direct /> */}
         {/* <Chat /> */}
         {/* <Login /> */}
-        <Profile />
+        {/* <Profile /> */}
       </View>
       //   {this.renderHeader()}
       //   <ScrollView style={styles.container} >

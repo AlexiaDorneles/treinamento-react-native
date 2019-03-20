@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { View, ScrollView } from 'react-native'
 import { DirectItem } from './direct-item/direct-item.section'
-import { Header, Footer } from '../../generic'
+import { DirectFooter } from './direct-footer/direct-footer.section'
+import { IgHeader, IgSearch } from '../../generic'
 
-import backArrow from '../../../img/back-arrow.png'
-import plus from '../../../img/plus.png'
-import instalogo from '../../../img/instagram_logo.png'
+const leftIcon = { name: 'left-arrow' }
+const centerIcon = { name: 'instagram_lg_black' }
+const rightIcon = { name: 'add-square' }
 
 import list from '../../../api/direct.json'
+import styles from './direct.style'
 
 export class Direct extends Component {
   renderItems() {
@@ -18,13 +20,7 @@ export class Direct extends Component {
 
   renderHeader() {
     return (
-      <Header left={backArrow} center={instalogo} right={plus} />
-    )
-  }
-
-  renderFooter() {
-    return (
-      <Footer />
+      <IgHeader left={leftIcon} center={centerIcon} right={rightIcon} />
     )
   }
 
@@ -32,10 +28,11 @@ export class Direct extends Component {
     return (
       <View style={{ flex: 1 }}>
         {this.renderHeader()}
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.container}>
+          <IgSearch style={styles.searchBar} />
           {this.renderItems()}
+          <DirectFooter />
         </ScrollView>
-        {this.renderFooter()}
       </View>
     )
   }

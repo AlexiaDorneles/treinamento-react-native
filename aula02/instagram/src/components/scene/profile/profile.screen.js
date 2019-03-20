@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Header, ProfilePicture } from '../../generic'
+import { IgHeader, IgProfilePicture } from '../../generic'
 import { View, TouchableOpacity, Text, ScrollView } from 'react-native'
 
 import styles from './profile.style'
@@ -31,7 +31,7 @@ export class Profile extends Component {
   renderImageContainer() {
     return (
       <View style={styles.imageContainer}>
-        <ProfilePicture picture={profile.picture} imageStyle={styles.pictureStyle} />
+        <IgProfilePicture picture={profile.picture} imageStyle={styles.pictureStyle} />
         <TouchableOpacity >
           <Text style={styles.blueText}>Change Profile Photo</Text>
         </TouchableOpacity>
@@ -42,7 +42,7 @@ export class Profile extends Component {
   render() {
     return (
       <ScrollView>
-        <Header left="Cancel" center="Edit Profile" right="Done" />
+        <IgHeader left="Cancel" center="Edit Profile" right="Done" />
         {this.renderImageContainer()}
         <View style={styles.borderBottom}>
           {this.renderProfileInfo()}
