@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { SafeAreaView, Text } from 'react-native'
 import { IgIcon } from '../ig-icon/ig-icon.component'
 
 import styles from './ig-header.style'
@@ -13,9 +13,9 @@ const _resolveHeader = (item, position) => {
 }
 
 export const IgHeader = ({ left, center, right }) => (
-  <View style={styles.container}>
+  <SafeAreaView style={styles.container}>
     {_resolveHeader(left, 0)}
     {_resolveHeader(center, 1)}
     {_resolveHeader(right, 2)}
-  </View>
+  </SafeAreaView>
 )

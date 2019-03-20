@@ -19,7 +19,7 @@ const _mapToRow = (info, alwaysShowBorder = false) => {
   ))
 }
 
-export class Profile extends Component {
+export class ProfileScreen extends Component {
   renderProfileInfo() {
     return _mapToRow(profile.info)
   }

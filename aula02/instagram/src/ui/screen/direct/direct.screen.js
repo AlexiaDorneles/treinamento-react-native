@@ -11,7 +11,7 @@ const rightIcon = { name: 'add-square' }
 import list from '@api/direct.json'
 import styles from './direct.style'
 
-export class Direct extends Component {
+export class DirectScreen extends Component {
   renderItems() {
     return list.map((i, index) => (
       <DirectItem direct={i} key={index} />
@@ -27,7 +27,7 @@ export class Direct extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        {this.renderHeader()}
+        {/* {this.renderHeader()} */}
         <ScrollView contentContainerStyle={styles.container}>
           <IgSearch style={styles.searchBar} />
           {this.renderItems()}
