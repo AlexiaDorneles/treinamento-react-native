@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
-import { Text, View, KeyboardAvoidingView } from 'react-native'
+import { Text, View, KeyboardAvoidingView, ScrollView } from 'react-native'
 
 import styles from './login.style'
 import { IgInput, IgButton, IgLine, IgIcon, IgLogo } from '../../generic'
-import { ScrollView } from 'react-native-gesture-handler';
 
 const LINEAR_START = { x: 1, y: 0 }
 const LINEAR_END = { x: 0, y: 1 }
