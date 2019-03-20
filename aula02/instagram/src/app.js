@@ -2,23 +2,24 @@
 import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
 
-import { Direct, Chat, Login, Profile, Feed } from './components/scene'
+import { Navigator } from '@ui/navigator'
 
-class App extends Component {
+import { Direct, Chat, Login, Profile, Feed } from '@ui/screen'
+
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        {false ? <Direct /> : null}
-        {false ? <Chat /> : null}
-        {true ? <Login /> : null}
-        {false ? <Profile /> : null}
-        {false ? <Feed /> : null}
-      </View>
+      <Navigator />
+      // <View style={styles.container}>
+      //   {false ? <Direct /> : null}
+      //   {false ? <Chat /> : null}
+      //   {false ? <Login /> : null}
+      //   {true ? <Profile /> : null}
+      //   {false ? <Feed /> : null}
+      // </View>
     )
   }
 }
-
-export default App
 
 const styles = StyleSheet.create({
   container: {
