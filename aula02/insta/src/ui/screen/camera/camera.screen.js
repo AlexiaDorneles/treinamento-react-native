@@ -3,9 +3,9 @@ import { View, TouchableOpacity } from 'react-native'
 
 import { BaseScreen } from '@ui/screen/base'
 import { IgCamera } from '@component'
-// import { IgCamera } from '../../../component/ig-camera/ig-camera.component'
 
 import { styles } from './camera.style'
+import { imgMockService } from '@service'
 
 export class CameraScreen extends BaseScreen {
   constructor(props) {
@@ -23,8 +23,9 @@ export class CameraScreen extends BaseScreen {
     this.igcamera = reference
   }
 
-  takePicture() {
-    this.igcamera.takePicture()
+  async takePicture() {
+    const pictureUri = await this.igcamera.takePicture()
+    imgMockService.setImg(pictureUri)
   }
 
   renderCameraButton() {
@@ -40,7 +41,7 @@ export class CameraScreen extends BaseScreen {
   renderContent() {
     return (
       <View style={styles.container}>
-        <IgCamera  ref={this.onRef} />
+        <IgCamera cameraRef={this.onRef} />
         <View style={styles.controlsContainer}>
           {this.renderCameraButton()}
         </View>

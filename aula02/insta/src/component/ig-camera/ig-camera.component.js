@@ -12,6 +12,18 @@ import { styles } from './ig-camera.style'
 export class IgCamera extends Component {
   state = { cameraPermission: '', micPermission: '' }
 
+  constructor(props) {
+    super(props)
+
+    this.takePicture = this.takePicture.bind(this)
+  }
+
+  buildPublicCameraReference() {
+    return {
+      takePicture: this.takePicture,
+    }
+  }
+
   componentDidMount() {
     this._requestAll()
   }
@@ -79,17 +91,17 @@ export class IgCamera extends Component {
     )
   }
 
-  onRef(reference) {
+  onRef = (reference) => {
     this.camera = reference
+    this.props.cameraRef(this.buildPublicCameraReference())
   }
 
   async takePicture() {
     if (this.camera && this._hasPermission()) {
       const options = { base64: true, pauseAfterCapture: true }
       const data = await this.camera.takePictureAsync(options)
-
       this.camera.resumePreview()
-      alert(data.uri)
+      return data.uri
     }
   }
 

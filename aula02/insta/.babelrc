@@ -12,6 +12,7 @@
           "@assets": "./src/assets",
           "@ui": "./src/ui",
           "@component": "./src/component",
+          "@service": "./src/service",
           "underscore": "lodash"
         }
       }

@@ -12,7 +12,7 @@ export default StyleSheet.create({
     backgroundColor: '#FAFAFA',
   },
   corners: {
-    fontSize: 14,
+    fontSize: 20,
     color: '#262626',
   },
   center: {

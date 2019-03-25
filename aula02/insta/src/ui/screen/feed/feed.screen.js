@@ -1,27 +1,25 @@
 import React from 'react'
-import { ScrollView, StatusBar } from 'react-native'
-// import { IgHeader, IgFooter, IgPost } from '@component'
+import { ScrollView, StatusBar, Image } from 'react-native'
 import { IgPost } from '@component'
 import { BaseScreen } from '@ui/screen'
+import { imgMockService } from '@service'
 
 import api from '@api/feed.json'
 import styles from './feed.style'
 
-// const left = { name: 'photo-camera' }
-// const center = { name: 'instagram_lg_black' }
-// const right = { name: 'paper-plane' }
-
 export class FeedScreen extends BaseScreen {
   renderContent() {
     return (
-      // <View style={{ flex: 1 }}>
-      // <IgHeader left={left} center={center} right={right} />
       <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.contentStyle} >
+        {/* Mock teste da camera */}
+        <Image style={{ width: 300, height: 300 }} source={imgMockService.getImgAsObject()} />
         {this.renderPosts()}
       </ScrollView>
-      // <IgFooter />
-      // </View >
     )
+  }
+
+  screenDidFocus() {
+    this.setState({})
   }
 
   screenWillFocus() {
