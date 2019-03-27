@@ -23,4 +23,14 @@ export const styles = StyleSheet.create({
     borderWidth: 12,
     borderColor: 'rgba(255,255,255,.4)',
   },
+  imageContainer: {
+    position: 'absolute',
+    bottom: 5,
+    right: 15,
+    elevation: 1,
+  },
+  imagePreview: {
+    height: 60,
+    width: 60,
+  },
 })
