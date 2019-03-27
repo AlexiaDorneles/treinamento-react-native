@@ -98,7 +98,7 @@ export class IgCamera extends Component {
 
   async takePicture() {
     if (this.camera && this._hasPermission()) {
-      const options = { base64: true, pauseAfterCapture: true }
+      const options = { base64: true, pauseAfterCapture: true, fixOrientation: true }
       const data = await this.camera.takePictureAsync(options)
       this.camera.resumePreview()
       return data.uri

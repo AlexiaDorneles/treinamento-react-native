@@ -1,22 +1,41 @@
 import React from 'react'
-import { ScrollView, StatusBar } from 'react-native'
-import { IgPost } from '@component'
+import { ScrollView, StatusBar, View } from 'react-native'
+import { IgPost, IgStories } from '@component'
 import { BaseScreen } from '@ui/screen'
+import { StorageService, DogService } from '@service'
 
-import api from '@api/feed.json'
 import styles from './feed.style'
 
+const PICTURES_KEY = 'picture'
+const dogNames = ['billyblack', 'welch', 'robertbanks', 'andrea']
+
 export class FeedScreen extends BaseScreen {
-  renderContent() {
-    return (
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.contentStyle} >
-        {this.renderPosts()}
-      </ScrollView>
-    )
+  state = { pictures: [], stories: [], me: {} }
+
+  constructor() {
+    super()
+    this.dogService = new DogService()
   }
 
-  screenDidFocus() {
-    this.setState({})
+  async componentDidMount() {
+    super.componentDidMount()
+  }
+
+  async _updateImages() {
+    return await StorageService.getObject(PICTURES_KEY, [])
+  }
+
+  async screenDidFocus() {
+    const pictures = await this._updateImages()
+    const { message } = await this.dogService.getRandomDogs(9)
+    const dogs = message.map((img, index) => ({
+      picture: img,
+      name: dogNames[index % 4],
+    }))
+
+    const response = await this.dogService.getRandomDog()
+    const me = { picture: response.message }
+    this.setState({ stories: dogs, me, pictures })
   }
 
   screenWillFocus() {
@@ -24,6 +43,16 @@ export class FeedScreen extends BaseScreen {
   }
 
   renderPosts() {
-    return api.feed.map((post, index) => <IgPost post={post} key={index} />)
+    return this.state.pictures.map(p => ({ imagem: p })).map((post, index) => <IgPost post={post} key={index} />)
+  }
+  renderContent() {
+    return (
+      <View>
+        <IgStories stories={this.state.stories} me={this.state.me} />
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.contentStyle} >
+          {this.renderPosts()}
+        </ScrollView>
+      </View>
+    )
   }
 }
