@@ -1,6 +1,0 @@
-export * from './chat/chat.screen'
-export * from './base/base.screen'
-export * from './direct'
-export * from './feed'
-export * from './login/login.screen'
-export * from './profile'

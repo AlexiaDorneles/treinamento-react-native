@@ -27,15 +27,22 @@ export class FeedScreen extends BaseScreen {
 
   async screenDidFocus() {
     const pictures = await this._updateImages()
+    const dogs = await this._getDogs()
+    const me = await this._getRandomDog()
+    this.setState({ stories: dogs, me, pictures })
+  }
+
+  async _getDogs() {
     const { message } = await this.dogService.getRandomDogs(9)
-    const dogs = message.map((img, index) => ({
+    return message.map((img, index) => ({
       picture: img,
       name: dogNames[index % 4],
     }))
+  }
 
+  async _getRandomDog() {
     const response = await this.dogService.getRandomDog()
-    const me = { picture: response.message }
-    this.setState({ stories: dogs, me, pictures })
+    return { picture: response.message }
   }
 
   screenWillFocus() {
@@ -47,9 +54,9 @@ export class FeedScreen extends BaseScreen {
   }
   renderContent() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <IgStories stories={this.state.stories} me={this.state.me} />
-        <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.contentStyle} >
+        <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.contentStyle} showsVerticalScrollIndicator={false}>
           {this.renderPosts()}
         </ScrollView>
       </View>

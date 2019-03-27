@@ -15,7 +15,7 @@ const buildDefaultPost = (post) => {
 }
 
 export const IgPost = ({ post }) => {
-  { buildDefaultPost(post) }
+  buildDefaultPost(post)
   return (
     <View style={styles.container}>
       <IgPostHeader profilePicture={post.perfil} author={post.autor} place={post.local} />

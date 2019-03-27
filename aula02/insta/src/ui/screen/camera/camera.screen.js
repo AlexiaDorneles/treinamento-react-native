@@ -33,9 +33,9 @@ export class CameraScreen extends BaseScreen {
 
   async takePicture() {
     const pictureUri = await this.igcamera.takePicture()
-    const { pictures } = this.state
+    const pictures = await StorageService.getObject(PICTURES_KEY)
     pictures.push(pictureUri)
-    StorageService.setObject(PICTURES_KEY, pictures)
+    await StorageService.setObject(PICTURES_KEY, pictures)
     this.setState({ pictures })
   }
 

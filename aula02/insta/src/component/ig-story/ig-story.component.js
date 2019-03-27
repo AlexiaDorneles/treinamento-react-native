@@ -35,6 +35,6 @@ const _renderGradient = (picture, isMe) => (
 export const IgStory = ({ picture, name, isMe = false }) => (
   <View style={styles.container}>
     {_renderContent(picture, isMe)}
-    <Text style={isMe ? { ...styles.text, ...styles.me} : styles.text}>{name}</Text>
+    <Text style={isMe ? { ...styles.text, ...styles.faded} : styles.text}>{name}</Text>
   </View >
 )

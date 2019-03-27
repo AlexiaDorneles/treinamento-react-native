@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
+    "emulator": "emulator -avd 4.65_720p_Galaxy_Nexus_API_27",
     "lint": "eslint src",
     "test": "jest"
   },

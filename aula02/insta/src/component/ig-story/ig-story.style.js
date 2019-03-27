@@ -23,6 +23,8 @@ export default StyleSheet.create({
   },
   me: {
     borderWidth: 0,
+  },
+  faded: {
     color: '#A5A5A5',
   },
 })
