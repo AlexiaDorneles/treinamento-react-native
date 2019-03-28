@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, TouchableOpacity, Image } from 'react-native'
+import { HeaderBackButton } from 'react-navigation'
 
 import { BaseScreen } from '@ui/screen/base'
 import { IgCamera } from '@component'
@@ -23,8 +24,24 @@ export class CameraScreen extends BaseScreen {
   }
 
   async componentDidMount() {
+    super.componentDidMount()
     const pictures = await StorageService.getObject(PICTURES_KEY, [])
     this.setState({ pictures })
+    this.props.navigation.setParams({
+      _onDismiss: this._onDismiss,
+    })
+  }
+
+  static navigationOptions = ({ navigation }) => {
+    const title = navigation.getParam('title')
+    return {
+      title,
+      headerLeft: <HeaderBackButton onPress={navigation.getParam('_onDismiss')} />,
+    }
+  }
+
+  _onDismiss = () => {
+    this.props.navigation.dismiss()
   }
 
   onRef(reference) {

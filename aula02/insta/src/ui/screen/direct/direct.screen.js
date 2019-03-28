@@ -26,8 +26,6 @@ export class DirectScreen extends BaseScreen {
 
   _onDismiss = () => {
     this.props.navigation.dismiss()
-    // const backAction = NavigationActions.back()
-    // this.props.navigation.dispatch(backAction)
   }
 
   screenWillFocus() {
@@ -57,7 +55,6 @@ export class DirectScreen extends BaseScreen {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        {/* {this.renderHeader()} */}
         <ScrollView contentContainerStyle={styles.container}>
           <IgSearch style={styles.searchBar} />
           {this.renderItems()}
